@@ -1,0 +1,15 @@
+@charset "utf-8";
+/* CSS Document */
+	
+	#box{
+	width:80%;
+	min-width:880px;
+	margin-top:50px;
+	margin-left:10%;
+	margin-right:10%;
+	background-color:#FFF;
+	height:*;
+	margin-bottom:10px;
+	}
+
+	
