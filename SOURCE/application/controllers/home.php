@@ -115,7 +115,8 @@ class Home extends CI_Controller {
 		$this->CarType->upDateCarType2();
 		echo "OKOK";
 	}
-	function doDeleteCarType($carTypeId)
+	
+	function doDeleteCarType($carTypeId)  ///  if havr reference to car canot delete
 	{   
 	 	$this->db->like('carTypeId', $carTypeId);
 		$this->db->from('car');
