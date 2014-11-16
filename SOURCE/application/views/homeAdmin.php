@@ -35,11 +35,7 @@ body {
 </head>
 <body>
 	<header>
-    		<ul>
-            	<li>
-               	<a class="menu" href="<?php echo base_url();?>index.php/home/test"><p align="center">สร้างรายการเช่า</p></a>
-                </li>
-                
+    		<ul>             
                 <li>
                 <a class="menu" href="<?php echo base_url();?>index.php/home/showAll"><p align="center">จัดการข้อมูลรถ</p></a>
                 </li>
@@ -49,7 +45,11 @@ body {
                 </li>
                 
                 <li>
-                <a class="menu" href="#"><p align="center">จัดการข้อมูลประเภทรถ</p></a>
+                <a class="menu" href="<?php echo base_url();?>index.php/home/showAllUserData"><p align="center">จัดการข้อมูลพนักงาน</p></a>
+                </li>
+                
+                <li>
+               	<a class="menu" href="<?php echo base_url();?>index.php/home/test"><p align="center">จัดการข้อมูลประกันภัย</p></a>
                 </li>
                 
                 <li>

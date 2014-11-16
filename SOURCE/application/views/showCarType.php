@@ -10,9 +10,9 @@
     <td><input name="submit" type="submit" value="ค้นหา"/></td></form>
     
     
-    <form id="form1" name="form1" method="post" action="<?php echo base_url()?>index.php/home/addCarType">
-    	<td><input name="submit" type="submit" value="เพิ่มข้อมูลประเภทรถ"/></td>
-	</form>
+  	<td>
+    <a class="menus" href="<?php echo base_url()?>index.php/home/addCarType">เพิ่มข้อมูลประเภทรถ</a>    
+    </td>
   </tr>
 </table>
 

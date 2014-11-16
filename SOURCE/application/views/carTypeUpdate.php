@@ -5,15 +5,16 @@
   <?php foreach($update as $row){?>
 <table class='table' width="" border="0" cellspacing="0" cellpadding="0">
 
-  <tr>
-    <td height="" align="left">ชื่อ</td>
-    <td><input class="checkInput" type="text" name="name" id="name" value="<?php echo $row['name']?>"; />     </tr>
-  <tr>
-    <td height="">รายละเอียด</td>
-    <td><input class="checkInput" type="text" name="detail" id="detail" value="<?php echo $row['detail']?>" /></td>
-  </tr>
-  <tr>
-  
+  	<tr>
+    	<td height="" align="left">ชื่อ</td>
+    	<td><input class="checkInput" type="text" name="name" id="name" value="<?php echo $row['name']?>"; />
+   	</tr>
+   
+  	<tr>
+    	<td height="">รายละเอียด</td>
+    	<td><input class="checkInput" type="text" name="detail" id="detail" value="<?php echo $row['detail']?>" /></td>
+  	</tr>
+      
   <tr>
     <td height=""></td>
     <td><input class="checkInput" type="hidden" name="carTypeId" id="carTypeId" value="<?php echo $row['carTypeId']?>" />

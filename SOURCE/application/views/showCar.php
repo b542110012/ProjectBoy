@@ -1,4 +1,5 @@
   <link rel="stylesheet" href="<?php echo base_url();?>css/table.css">
+  <meta charset="utf-8">
 <script>
 	$(document).ready(function(){			
 			$('.menus').click(function(event) {  //. = class  ,,,,    # = id

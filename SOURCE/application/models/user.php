@@ -177,7 +177,7 @@ class User extends CI_Model {
  }
  ######################## end function login #############################
  
- function showAllUserData(){
+ function showAllData(){
 		$query = $this->db->get('user')->result_array();
 		return $query;
 	}
@@ -196,7 +196,7 @@ class User extends CI_Model {
 		}
 	}
 	
-	
+	/**
 	function updateUser($userId)
 	{
 		$this->db->where('user.userId', $userId);
@@ -222,18 +222,39 @@ class User extends CI_Model {
 					);
 			$this->db->where('user.userId',$this->getUserId());
 			$this->db->update('user',$data);
-	}
+	} **/
+	
 	
 	function searchDataUser($keyword)
 	{
 		$this->db->like('user.userId',$keyword);
 		$this->db->or_like('user.name',$keyword);
-		$this->db->or_like('user.userName',$keyword);
-		$this->db->or_like('user.phone',$keyword);
-
+		$this->db->or_like('user.email',$keyword);
+		$this->db->or_like('user.status',$keyword);
 		$query  =  $this->db->get('user')->result_array();
 		return $query;
 			
+	}
+	
+	function updateUser($userId)
+	{
+		$this->db->where('user.userId', $userId);
+		$query = $this->db->get('user')->result_array();
+		return $query;
+	}
+	function upDateUser2()
+	{
+		$data = array(
+					   'userId'		=> $this->getUserId(),
+					   'name' 		=> $this->getName(),
+					   'birthDate' 	=> $this->getBirthDate(),
+					   'phone' 		=> $this->getPhone(),
+					   'email' 		=> $this->getEmail(),
+					   'address' 	=> $this->getAddress(),
+					   'status' 	=> $this->getStatus(),
+					);
+			$this->db->where('user.userId',$this->getUserId());
+			$this->db->update('user',$data);
 	}
 }
 ?>

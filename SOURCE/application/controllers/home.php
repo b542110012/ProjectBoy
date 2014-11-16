@@ -137,4 +137,75 @@ class Home extends CI_Controller {
         $data['showAll'] = $this->CarType->searchDataCarType($keyword);
         $this->load->view('showCarType',$data);
 	}
+	
+	/////////////////////////  USER  FUNCTION ZONE  /////////////////////////
+	
+	function showAllUserData(){
+		$data['showAll'] = $this->User->showAllData();
+		$this->load->view('showUser',$data);
+	}
+	
+	function searchDataUser(){
+		$keyword = $this->input->post('keyword');
+        $data['showAll'] = $this->User->searchDataUser($keyword);
+        $this->load->view('showUser',$data);
+	}
+	
+	function addUser(){
+		$this->load->view('addUser');
+	}
+	
+	function addUserAction(){
+		$name 		= $this->input->post('name');
+		$birthDate 	= $this->input->post('birthDate');
+		$phone 		= $this->input->post('phone');
+		$email 		= $this->input->post('email');
+		$address 	= $this->input->post('address');
+		$userName 	= $this->input->post('userName');
+		$password 	= $this->input->post('password');
+		$status 	= $this->input->post('status');
+	
+			$this->User->setName($name);
+			$this->User->setBirthDate($birthDate);
+			$this->User->setPhone($phone);
+			$this->User->setEmail($email);
+			$this->User->setAddress($address);
+			$this->User->setUserName($userName);
+			$this->User->setPassword($password);
+			$this->User->setStatus($status);
+
+					$this->User->addUserData();
+			
+		
+				echo "<center>Add Data Complete<br>";
+	}
+	
+	function doDeleteUser($userId)
+	{    
+		$this->User->deleteUser($userId);
+		echo "OK";
+	}
+	
+	
+	function upDateUser($userId){
+		$data['update']= $this->User->updateUser($userId);
+		$this->load->view('userUpdate',$data);
+		}
+		
+	function doUpdateUser()
+	{
+		$this->User->setUserId($this->input->post('userId'));
+		$this->User->setName($this->input->post('name'));
+		$this->User->setBirthDate($this->input->post('birthDate'));
+		$this->User->setPhone($this->input->post('phone'));
+		$this->User->setEmail($this->input->post('email'));
+		$this->User->setAddress($this->input->post('address'));
+		$this->User->setStatus($this->input->post('status'));
+
+		
+
+							
+		$this->User->upDateUser2();
+		echo "OKOK";
+	}
  }
